@@ -1,0 +1,19 @@
+{
+    "name": "template_engine",
+    "version": "1.0.0",
+    "description": "a template engine",
+    "main": "index.js",
+    "scripts": {
+        "serve": "webpack-dev-server"
+    },
+    "keywords": [
+        "mustache"
+    ],
+    "author": "yuzhenyou",
+    "license": "ISC",
+    "devDependencies": {
+        "webpack": "^4.46.0",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "3.11.3"
+    }
+}

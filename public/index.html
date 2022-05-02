@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template_engine</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script src="/dist/bundle.js"></script>
+    <script>
+
+    let template = `
+        <div class="container">
+            {{#showTitle}}
+                <h5 class="title">Title：{{title}}</h5>
+            {{/showTitle}}
+            {{#showType}}
+                <ul class="type">
+                    {{#type}}
+                        <li class="li">{{.}}</li>
+                    {{/type}}
+                </ul>
+            {{/showType}}
+            <ol class="type">
+                {{#type}}
+                    <li class="li">{{.}}</li>
+                {{/type}}
+            </ol>
+        </div>
+    `;
+
+    let data = {
+        title: "人物统计表",
+        showTitle: true,
+        showType: false,
+        type: ["类别1", "类别2"],
+        num: 2,
+        arr: [
+            { name: "张三", age: 30, num: [60, 70] },
+            { name: "李四", age: 40, num: [20, 30] }
+        ]
+    };
+
+    let dom = render(template, data);
+    document.querySelector('#app').innerHTML = dom;
+    </script>
+</body>
+
+</html>
